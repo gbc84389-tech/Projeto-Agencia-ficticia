@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "banner"
+    "sobre"
+    "servicos"
+    "depoimentos"
+    "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    min-height: 100vh;
+    gap: 20vh;
+    background-color: #BDDDFC;
+}
+
+:root {
+    --cor-principal: #384959;
+}
+/*Header*/
+.container-header {
+    grid-area: header;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 3rem;
+    background: white;
+    z-index: 1000;
+    background-color: #88BDF2;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    color: var(--cor-principal);
+}
+
+.logo-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    width: 7rem;
+    height: 4rem;
+}
+
+.logo-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.container-menu {
+    width: 50em;
+}
+.container-item-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-list-menu {
+    list-style: none;
+}
+
+.item-menu-link {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--cor-principal);
+    transition: 0.2s ease-in-out, color 0.2s ease;
+}
+
+.item-menu-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: blue;
+    transition: width 0.3s ease;
+}
+
+.item-menu-link:hover {
+    color: blue;
+}
+
+.item-menu-link:hover::after {
+    width: 100%;
+}
+/*fim do header*/
+
+/*Banner*/
+.secao-banner {
+    grid-area: banner;
+    color: var(--cor-principal);
+}
+
+.container-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+img {
+    width: 40vw;
+}
+
+.banner-text {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/*Fim do Banner*/
+
+/*Sobre*/
+.secao-sobre {
+    grid-area: sobre;
+    color: var(--cor-principal);
+}
+
+.container-sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 700px;
+    margin-left: 10vw;
+}
+
+.sobre-text {
+    font-size: 4rem;
+    align-self: center;
+}
+
+.sobre-p {
+    align-self: center;
+    font-size: 1.5rem;
+    max-width: 650px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/*Final Sobre*/
+
+/*Servicos*/
+.secao-servicos {
+    grid-area: servicos;
+    color: var(--cor-principal);
+}
+
+.container-servicos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.card-servicos {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.text-servicos {
+    font-size: 4rem;
+}
+
+.text-card {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #6A89A7;
+    border-radius: 8px;
+    width: 280px;
+    height: 350px;
+    font-size: 23px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/*Fim Servicos*/
+
+/*Depoimentos*/
+.secao-depoimentos {
+    grid-area: depoimentos;
+    color: var(--cor-principal);
+}
+
+.container-depoimentos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.text-depoimentos {
+    font-size: 4rem;
+}
+
+.item-depoimentos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-depoimentos-p {
+    font-size: 1.8rem;
+}
+
+.strong-depoimentos {
+    font-size: 1.2rem;
+}
+
+/*Fim Depoimentos*/
+.secao-footer {
+    grid-area: footer;
+    color: var(--cor-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
