@@ -1,0 +1,22 @@
+@use 'variaveis';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: variaveis.$fonte-padrao;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "banner"
+    "sobre"
+    "servicos"
+    "depoimentos"
+    "footer";
+  min-height: 100vh;
+  gap: variaveis.$espacamento;
+  background-color: variaveis.$cor-fundo;
+}

@@ -1,0 +1,40 @@
+@use 'variaveis';
+@use 'mixins' as *;
+
+.logo-text {
+  font-weight: bold;
+}
+
+.item-menu-link {
+  position: relative;
+  text-decoration: none;
+  font-weight: 600;
+  color: variaveis.$cor-principal;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: blue;
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    color: blue;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.text-card {
+  @include flex-center();
+  padding: 1rem;
+  background-color: variaveis.$cor-card;
+  border-radius: 8px;
+  @include sombra-padrao;
+}

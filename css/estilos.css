@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  display: grid;
+  grid-template-areas: "header" "banner" "sobre" "servicos" "depoimentos" "footer";
+  min-height: 100vh;
+  gap: 20vh;
+  background-color: #BDDDFC;
+}
+
+.container {
+  width: 100%;
+  max-width: 85rem;
+  margin: 0 auto;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+.container-header {
+  grid-area: header;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 3rem;
+  background-color: #88BDF2;
+  z-index: 1000;
+  color: #384959;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .container-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .container-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+  }
+  .text-card {
+    flex: 1 1 250px;
+    max-width: 280px;
+    height: 350px;
+    font-size: 1.3rem;
+  }
+}
+/* TABLET / NOTEBOOK */
+@media (min-width: 769px) and (max-width: 1919px) {
+  .container-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .text-card {
+    font-size: 1.4rem;
+  }
+}
+/* DESKTOP */
+@media (min-width: 1920px) {
+  .text-card {
+    width: 280px;
+    height: 350px;
+    font-size: 23px;
+  }
+}
+.logo-text {
+  font-weight: bold;
+}
+
+.item-menu-link {
+  position: relative;
+  text-decoration: none;
+  font-weight: 600;
+  color: #384959;
+}
+.item-menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: blue;
+  transition: width 0.3s ease;
+}
+.item-menu-link:hover {
+  color: blue;
+}
+.item-menu-link:hover::after {
+  width: 100%;
+}
+
+.text-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 1rem;
+  background-color: #6A89A7;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/*# sourceMappingURL=estilos.css.map */

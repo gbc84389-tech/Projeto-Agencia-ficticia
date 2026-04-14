@@ -1,0 +1,72 @@
+@use 'variaveis';
+@use 'mixins' as *;
+
+.container {
+  width: 100%;
+  max-width: 85rem;
+  margin: 0 auto;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+.container-header {
+  grid-area: header;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 3rem;
+  background-color: variaveis.$cor-secundaria;
+  z-index: 1000;
+  color: variaveis.$cor-principal;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .container-header {
+    @include flex-center(column);
+  }
+
+  .container-banner {
+    @include flex-center(column);
+    gap: 5vh;
+  }
+
+  .text-card {
+    flex: 1 1 250px;
+    max-width: 280px;
+    height: 350px;
+    font-size: 1.3rem;
+  }
+}
+
+/* TABLET / NOTEBOOK */
+@media (min-width: 769px) and (max-width: 1919px) {
+
+  .container-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .text-card {
+    font-size: calc(1rem + 0.4rem);
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1920px) {
+
+  .text-card {
+    width: 280px;
+    height: 350px;
+    font-size: 23px;
+  }
+}
